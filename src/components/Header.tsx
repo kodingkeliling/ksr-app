@@ -15,6 +15,22 @@ export default function Header() {
     { name: 'YouTube', href: '#youtube' },
   ];
 
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
+    
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+    
+    // Close mobile menu if open
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="bg-white shadow-lg fixed w-full top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,8 +38,12 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
-                <span className="text-white text-xl font-bold">KSR</span>
+              <div className="w-12 h-12 rounded-full overflow-hidden">
+                <img 
+                  src="/img/logoksr.png" 
+                  alt="KSR Logo" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
             <div className="ml-3">
@@ -38,7 +58,8 @@ export default function Header() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-red-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                onClick={(e) => handleSmoothScroll(e, item.href)}
+                className="text-gray-700 hover:text-red-600 px-3 py-2 text-sm font-medium transition-colors duration-200 cursor-pointer"
               >
                 {item.name}
               </a>
@@ -49,7 +70,8 @@ export default function Header() {
           <div className="hidden md:block">
             <a
               href="#daftar"
-              className="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors duration-200 font-medium"
+              onClick={(e) => handleSmoothScroll(e, '#daftar')}
+              className="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors duration-200 font-medium cursor-pointer"
             >
               Daftar!
             </a>
@@ -80,16 +102,16 @@ export default function Header() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-red-600 block px-3 py-2 text-base font-medium"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={(e) => handleSmoothScroll(e, item.href)}
+                  className="text-gray-700 hover:text-red-600 block px-3 py-2 text-base font-medium cursor-pointer"
                 >
                   {item.name}
                 </a>
               ))}
               <a
                 href="#daftar"
-                className="bg-red-600 text-white block px-3 py-2 rounded-lg text-base font-medium mt-4 text-center"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => handleSmoothScroll(e, '#daftar')}
+                className="bg-red-600 text-white block px-3 py-2 rounded-lg text-base font-medium mt-4 text-center cursor-pointer"
               >
                 Daftar!
               </a>

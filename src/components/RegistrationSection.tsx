@@ -1,4 +1,4 @@
-import { registrationSection } from '@/data/mockData';
+import { registrationSection, registrationSteps } from '@/data/mockData';
 
 export default function RegistrationSection() {
   return (
@@ -22,45 +22,17 @@ export default function RegistrationSection() {
             </p>
             
             <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
-                  <span className="text-white text-sm font-bold">1</span>
+              {registrationSteps.map((step) => (
+                <div key={step.step} className="flex items-start space-x-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+                    <span className="text-white text-sm font-bold">{step.step}</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-white mb-2">{step.title}</h4>
+                    <p className="text-red-100 text-sm">{step.description}</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-white mb-2">Persiapan Dokumen</h4>
-                  <p className="text-red-100 text-sm">Siapkan KTM, foto 3x4, dan surat rekomendasi dari fakultas</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
-                  <span className="text-white text-sm font-bold">2</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white mb-2">Pendaftaran Online</h4>
-                  <p className="text-red-100 text-sm">Isi formulir pendaftaran melalui link yang tersedia</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
-                  <span className="text-white text-sm font-bold">3</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white mb-2">Seleksi & Wawancara</h4>
-                  <p className="text-red-100 text-sm">Ikuti tahap seleksi dan wawancara yang diadakan</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
-                  <span className="text-white text-sm font-bold">4</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white mb-2">Pelantikan</h4>
-                  <p className="text-red-100 text-sm">Setelah lulus seleksi, ikuti pelantikan anggota baru</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 

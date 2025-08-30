@@ -2,8 +2,8 @@ import { heroSection } from '@/data/mockData';
 
 export default function HeroSection() {
   return (
-    <section id="home" className="relative bg-gradient-to-br from-red-50 to-white pt-24 pb-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="home" className="relative bg-gradient-to-br from-red-50 to-white min-h-screen flex items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">

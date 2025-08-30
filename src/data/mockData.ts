@@ -189,6 +189,29 @@ export const registrationSection = {
   ctaLink: "#daftar"
 };
 
+export const registrationSteps = [
+  {
+    step: 1,
+    title: "Persiapan Dokumen",
+    description: "Siapkan KTM, foto 3x4, dan surat rekomendasi dari fakultas"
+  },
+  {
+    step: 2,
+    title: "Pendaftaran Online",
+    description: "Isi formulir pendaftaran melalui link yang tersedia"
+  },
+  {
+    step: 3,
+    title: "Seleksi & Wawancara",
+    description: "Ikuti tahap seleksi dan wawancara yang diadakan"
+  },
+  {
+    step: 4,
+    title: "Pelantikan",
+    description: "Setelah lulus seleksi, ikuti pelantikan anggota baru"
+  }
+];
+
 export const contactInfo = {
   address: "Jl. Tamansari No. 6-8, Kota Bandung, Jawa Barat, Indonesia",
   phone: "Ilma Hasna",

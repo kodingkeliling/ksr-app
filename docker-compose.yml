@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  ksr-unpas-website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ksr-unpas-website
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - HOSTNAME=0.0.0.0
+    volumes:
+      - ./public:/app/public
+    networks:
+      - ksr-network
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000', (res) => { process.exit(res.statusCode === 200 ? 0 : 1) })"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Nginx reverse proxy (optional)
+  nginx:
+    image: nginx:alpine
+    container_name: ksr-unpas-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - ksr-unpas-website
+    networks:
+      - ksr-network
+
+networks:
+  ksr-network:
+    driver: bridge
+
+volumes:
+  public-data:
+

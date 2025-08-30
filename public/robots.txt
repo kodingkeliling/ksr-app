@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ksrunpas.com/sitemap.xml
+
+# Disallow admin or private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
+# Allow important pages
+Allow: /
+Allow: /#about
+Allow: /#unit
+Allow: /#team
+Allow: /#daftar
+Allow: /#contact
+Allow: /#youtube
+
+# Crawl delay
+Crawl-delay: 1
+

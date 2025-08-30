@@ -38,19 +38,18 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <div className="w-12 h-12 rounded-full overflow-hidden">
-                <img 
-                  src="/img/logoksr.png" 
-                  alt="KSR Logo" 
-                  className="w-full h-full object-cover"
-                />
+              <img 
+              src="/img/logoksrunpas.webp" 
+              alt="KSR Logo" 
+              className="w-13 h-12"
+              />
               </div>
-            </div>
-            <div className="ml-3">
-              <h1 className="text-xl font-bold text-red-600">{siteConfig.name}</h1>
-              <p className="text-xs text-gray-600">{siteConfig.fullName}</p>
-            </div>
+              <div className="ml-3">
+                <h1 className="text-xl font-bold text-red-600">{siteConfig.name}</h1>
+                <p className="text-xs text-gray-600">{siteConfig.fullName}</p>
+                 </div>
           </div>
+
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">

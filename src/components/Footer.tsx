@@ -133,7 +133,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-gray-800 text-center">
           <p className="text-gray-400 text-sm">
-            © Copyright <strong>KSR UNPAS</strong>. All Rights Reserved
+            © Copyright <strong>KSR UNPAS</strong>. Powered by <strong>Koding Keliling</strong>
           </p>
         </div>
       </div>

@@ -39,7 +39,7 @@ export default function Header() {
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <img 
-              src="/img/logoksrunpas.webp" 
+              src="/img/logoksr.png" 
               alt="KSR Logo" 
               className="w-13 h-12"
               />

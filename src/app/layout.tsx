@@ -19,6 +19,11 @@ export const metadata: Metadata = {
   authors: [{ name: "KSR UNPAS" }],
   creator: "KSR UNPAS",
   publisher: "KSR UNPAS",
+  icons: {
+    icon: '/img/logoksr.png',
+    shortcut: '/img/logoksr.png',
+    apple: '/img/logoksr.png',
+  },
   formatDetection: {
     email: false,
     address: false,

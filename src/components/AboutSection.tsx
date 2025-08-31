@@ -16,8 +16,8 @@ export default function AboutSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           {/* Content */}
-          <div>
-            <div className="prose prose-lg max-w-none">
+          <div className="text-center lg:text-left">
+            <div className="prose prose-lg max-w-none mx-auto lg:mx-0">
               {aboutSection.description.split('\n\n').map((paragraph, index) => (
                 <p key={index} className="text-gray-600 mb-4 leading-relaxed">
                   {paragraph.trim()}
@@ -25,7 +25,7 @@ export default function AboutSection() {
               ))}
             </div>
             
-            <div className="mt-8">
+            <div className="mt-8 flex justify-center lg:justify-start">
               <a
                 href="#unit"
                 className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700 transition-colors duration-200"

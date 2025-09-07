@@ -21,10 +21,10 @@ export const siteConfig = {
   tagline: "Melayani dengan Hati, Mengabdi untuk Masyarakat",
   description: "KSR UNPAS adalah unit kegiatan mahasiswa Universitas Pasundan yang bergerak di bidang kemanusiaan dan kepalangmerahan.",
   address: "Jl. Tamansari No. 6-8, Kota Bandung, Jawa Barat, Indonesia",
-  phone: "Ilma Hasna",
-  email: "ksr@unpas.ac.id",
+  phone: "085624956109",
+  email: "ksrunpas88@gmail.com",
   instagram: "@ksrunpas",
-  youtube: "KSR UNPAS Official"
+  youtube: "KSR UNPAS"
 };
 
 export const heroSection = {
@@ -38,120 +38,165 @@ export const heroSection = {
 export const aboutSection = {
   title: "Tentang Kami",
   subtitle: "Korps Sukarela Universitas Pasundan",
-  description: `KSR UNPAS adalah unit kegiatan mahasiswa Universitas Pasundan yang bergerak di bidang kemanusiaan dan kepalangmerahan. 
-  
-  Berdiri sejak tahun 1980, KSR UNPAS telah berkomitmen untuk melayani masyarakat melalui berbagai kegiatan sosial, pelatihan pertolongan pertama, donor darah, dan program kemanusiaan lainnya.
-  
-  Sebagai bagian dari Palang Merah Indonesia, kami berdedikasi untuk membantu sesama dalam keadaan darurat dan membangun kesadaran masyarakat akan pentingnya pertolongan pertama.`,
-  stats: [
-    { number: "500+", label: "Anggota Aktif" },
-    { number: "1000+", label: "Kegiatan Sosial" },
-    { number: "50+", label: "Pelatihan Pertolongan Pertama" },
-    { number: "10000+", label: "Donor Darah" }
-  ]
+  description: `Korps Sukarela (KSR) Palang Merah Indonesia merupakan
+  unit kegiatan yang bergerak dalam kepalangmerahan yang sejalan dengan 
+  tridarma perguruan tinggi. Korps Sukarela Palang Merah Indonesia Unit 
+  Universitas Pasundan Bandung merupakan satu kesatuan dalam perhimpunan 
+  Palang Merah Indonesia untuk membentuk insan akademis yang memiliki jiwa 
+  kemanusian. Korps Sukarela Palang Merah Indonesia Unit Universitas Pasundan
+  Bandung dibentuk atas dasar kesadaran dan kesukarelaan pribadi mahasiswa 
+  untuk menjaga anggota Korps Sukarela Palang Merah Indonesia Unit Universitas
+  Pasundan Bandung yang sesuai dengan asas kepalangmerahan.`
 };
 
-export const units: Unit[] = [
+
+// DPH (Dewan Pengurus Harian)
+export const dphMembers: TeamMember[] = [
   {
-    name: "Pertolongan Pertama",
-    description: "Unit yang fokus pada pelatihan dan pelaksanaan pertolongan pertama dalam keadaan darurat.",
-    icon: "🩹"
+    name: "Muhamad Rafa Rizkiansyah",
+    position: "Komandan",
+    image: "/img/team-ksr/Komandan-Muhamad_Rafa_Rizkiansyah.jpg"
   },
   {
-    name: "Donor Darah",
-    description: "Unit yang mengelola dan mengkoordinasikan kegiatan donor darah untuk membantu kebutuhan darah di masyarakat.",
-    icon: "🩸"
+    name: "Naisya Dzahrani Putri",
+    position: "Wakil Komandan",
+    image: "/img/team-ksr/Wakil_Komandan-Naisya_Dzahrani_Putri.jpg"
   },
   {
-    name: "Kesehatan Masyarakat",
-    description: "Unit yang melakukan penyuluhan dan edukasi kesehatan kepada masyarakat luas.",
-    icon: "🏥"
+    name: "Tufi 'Afiati",
+    position: "Sekretaris",
+    image: "/img/team-ksr/Sekretaris-Tufi_'Afiati.jpg"
   },
   {
-    name: "Penanggulangan Bencana",
-    description: "Unit yang siap siaga dalam penanggulangan bencana dan keadaan darurat.",
-    icon: "🚨"
-  },
-  {
-    name: "Pelatihan & Edukasi",
-    description: "Unit yang menyelenggarakan berbagai pelatihan dan program edukasi kemanusiaan.",
-    icon: "📚"
+    name: "Sinta Sintia Sari",
+    position: "Bendahara",
+    image: "/img/team-ksr/Bendahara-Sinta_Sintia_Sari.jpg"
   }
 ];
 
-export const teamMembers: TeamMember[] = [
+// Bidang HUMAS
+export const humasMembers: TeamMember[] = [
   {
-    name: "Boby Ilham",
-    position: "Ketua Umum"
+    name: "Hari Saputra",
+    position: "Koordinator HUMAS",
+    image: "/img/team-ksr/Koordinator_HUMAS-Hari_Saputra.jpg"
   },
   {
-    name: "Aditya Maulana",
-    position: "Ketua 1"
-  },
-  {
-    name: "Tubagus Aji",
-    position: "Ketua 2"
-  },
-  {
-    name: "Fajar Ramadhan",
-    position: "Ketua 3"
-  },
-  {
-    name: "Khairunnisa Aulia",
-    position: "Sekretaris Umum"
-  },
-  {
-    name: "Awalya Ramadhani",
-    position: "Bendahara Umum"
-  },
-  {
-    name: "Krisna Agum",
-    position: "Koordinator Pertolongan Pertama"
-  },
-  {
-    name: "Kitti Pittriyani",
-    position: "Wakil Koordinator Pertolongan Pertama"
-  },
-  {
-    name: "Naufal Ariq",
-    position: "Koordinator Donor Darah"
-  },
-  {
-    name: "Putri Humaira",
-    position: "Wakil Koordinator Donor Darah"
-  },
-  {
-    name: "Naufal Rafli",
-    position: "Koordinator Kesehatan Masyarakat"
-  },
-  {
-    name: "Nabilla Aurellia",
-    position: "Wakil Koordinator Kesehatan Masyarakat"
-  },
-  {
-    name: "Alpa Reja",
-    position: "Koordinator Penanggulangan Bencana"
-  },
-  {
-    name: "Wahyu Dimas",
-    position: "Koordinator Pelatihan & Edukasi"
-  },
-  {
-    name: "Abyan Zhorif",
-    position: "Sarana Prasarana"
-  },
-  {
-    name: "Ferdiansah S",
-    position: "Digital Content"
-  },
-  {
-    name: "Muhammad Rofi",
-    position: "Humas Internal"
-  },
-  {
-    name: "Ilma Hasna",
-    position: "Humas Eksternal"
+    name: "Moh. Haikal Mubarok",
+    position: "Anggota HUMAS",
+    image: "/img/team-ksr/Anggota_HUMAS-Moh._Haikal_Mubarok.jpg"
   }
+];
+
+// Bidang DIKLAT
+export const diklatMembers: TeamMember[] = [
+  {
+    name: "Rifqi Hadiansyah",
+    position: "Koordinator Bidang DIKLAT",
+    image: "/img/team-ksr/Koordinator_Bidang_DIKLAT-Rifqi_Hadiansyah.jpg"
+  },
+  {
+    name: "Rahmah Ayu Azzahra",
+    position: "Anggota Bidang DIKLAT",
+    image: "/img/team-ksr/Anggota_Bidang_DIKLAT-Rahmah_Ayu_Azzahra.jpg"
+  }
+];
+
+// Bidang LITBANG
+export const litbangMembers: TeamMember[] = [
+  {
+    name: "Humaira Syahla Ayu Hanifa",
+    position: "Koordinator Bidang LITBANG",
+    image: "/img/team-ksr/Koordinator_Bidang_LITBANG-Humaira_Syahla_Ayu_Hanifa.jpg"
+  },
+  {
+    name: "Hanina Dzikriya",
+    position: "Anggota Bidang LITBANG",
+    image: "/img/team-ksr/Anggota_Bidang_LITBANG-Hanina_Dzikriya.jpg"
+  },
+  {
+    name: "Sheila Yolanda Meron",
+    position: "Anggota Bidang LITBANG",
+    image: "/img/team-ksr/Anggota_Bidang_LITBANG-Sheila_Yolanda_Meron.jpg"
+  }
+];
+
+// Bidang PPM
+export const ppmMembers: TeamMember[] = [
+  {
+    name: "Nada Rohadatula'isy Asyikin",
+    position: "Koordinator Bidang PPM",
+    image: "/img/team-ksr/Koordinator_Bidang_PPM-Nada_Rohadatula'isy_Asyikin.jpg"
+  },
+  {
+    name: "Risma Diana",
+    position: "Anggota Bidang PPM",
+    image: "/img/team-ksr/Anggota_Bidang_PMM-Risma_Diana.jpg"
+  }
+];
+
+// Bidang SAPRAS
+export const saprasMembers: TeamMember[] = [
+  {
+    name: "Ika Laksami Maheswari",
+    position: "Koordinator Bidang SAPRAS",
+    image: "/img/team-ksr/Koordinator_Bidang_SAPRAS-Ika_Laksami_Maheswari.jpg"
+  },
+  {
+    name: "Marianus Sengga Sori",
+    position: "Anggota Bidang SAPRAS",
+    image: "/img/team-ksr/Anggota_Bidang_SAPRAS Marianus_Sengga_Sori.jpg"
+  },
+  {
+    name: "Daniel Ananda Mulyana",
+    position: "Anggota Bidang SAPRAS",
+    image: "/img/team-ksr/Anggota_Bidang_SAPRAS-Daniel_Ananda_Mulyana.jpg"
+  }
+];
+
+// Bidang P4GN
+export const p4gnMembers: TeamMember[] = [
+  {
+    name: "Nazia Zahra",
+    position: "Koordinator Bidang P4GN",
+    image: "/img/team-ksr/Koordinator_Bidang_P4GN-Nazia_Zahra.jpg"
+  },
+  {
+    name: "Citra Purnama Sunda",
+    position: "Anggota Bidang P4GN",
+    image: "/img/team-ksr/Anggota_Bidang_P4GN-Citra_Purnama_Sunda.jpg"
+  }
+];
+
+// Dewan Pembina
+export const dewanPembinaMembers: TeamMember[] = [
+  {
+    name: "Agree Tias Maulana",
+    position: "Dewan Pembina",
+    image: "/img/team-ksr/Dewan_Pembina-Agree_Tias_Maulana.jpg"
+  },
+  {
+    name: "Hafidz Fattahurrahman Pramadia",
+    position: "Dewan Pembina",
+    image: "/img/team-ksr/Dewan_Pembina-Hafidz_Fattahurrahman_Pramadia.jpg"
+  },
+  {
+    name: "Raka Adam Ramadan",
+    position: "Dewan Pembina",
+    image: "/img/team-ksr/Dewan_Pembina-Raka_Adam_Ramadan.jpg"
+  }
+];
+
+// Legacy team members array for backward compatibility
+export const teamMembers: TeamMember[] = [
+  ...dphMembers,
+  ...humasMembers,
+  ...diklatMembers,
+  ...litbangMembers,
+  ...ppmMembers,
+  ...saprasMembers,
+  ...p4gnMembers,
+  ...dewanPembinaMembers
 ];
 
 export const faqs: FAQ[] = [
@@ -192,30 +237,25 @@ export const registrationSection = {
 export const registrationSteps = [
   {
     step: 1,
-    title: "Persiapan Dokumen",
+    title: "Pendaftaran Online dan Offline",
     description: "Siapkan KTM, foto 3x4, dan surat rekomendasi dari fakultas"
   },
   {
     step: 2,
-    title: "Pendaftaran Online",
+    title: "Seleksi, Wawancara, dan Tes Fisik",
     description: "Isi formulir pendaftaran melalui link yang tersedia"
   },
   {
     step: 3,
-    title: "Seleksi & Wawancara",
+    title: "Pendidikan Dasar",
     description: "Ikuti tahap seleksi dan wawancara yang diadakan"
   },
-  {
-    step: 4,
-    title: "Pelantikan",
-    description: "Setelah lulus seleksi, ikuti pelantikan anggota baru"
-  }
 ];
 
 export const contactInfo = {
   address: "Jl. Tamansari No. 6-8, Kota Bandung, Jawa Barat, Indonesia",
-  phone: "Ilma Hasna",
-  email: "ksr@unpas.ac.id",
+  phone: "085624956109",
+  email: "ksrunpas88@gmail.com",
   instagram: "@ksrunpas",
-  youtube: "KSR UNPAS Official"
+  youtube: "KSR UNPAS"
 };

@@ -1,80 +1,105 @@
-import { teamMembers } from '@/data/mockData';
+import { 
+  dphMembers, 
+  humasMembers, 
+  diklatMembers, 
+  litbangMembers, 
+  ppmMembers, 
+  saprasMembers, 
+  p4gnMembers, 
+  dewanPembinaMembers 
+} from '@/data/mockData';
 
 export default function TeamSection() {
-  // Group team members by position category
-  const leadership = teamMembers.filter(member => 
-    member.position.includes('Ketua') || 
-    member.position.includes('Sekretaris') || 
-    member.position.includes('Bendahara')
-  );
-  
-  const coordinators = teamMembers.filter(member => 
-    member.position.includes('Koordinator') || 
-    member.position.includes('Wakil Koordinator')
-  );
-  
-  const support = teamMembers.filter(member => 
-    !member.position.includes('Ketua') && 
-    !member.position.includes('Sekretaris') && 
-    !member.position.includes('Bendahara') &&
-    !member.position.includes('Koordinator') &&
-    !member.position.includes('Wakil Koordinator')
-  );
-
-  const renderTeamGroup = (title: string, members: typeof teamMembers, color: string) => (
+  const renderTeamGroup = (title: string, members: any[], color: string) => (
     <div className="mb-12">
       <h3 className={`text-2xl font-bold text-${color} mb-6 text-center`}>
         {title}
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {members.map((member, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100"
-          >
-            <div className="text-center">
-              {/* Avatar Placeholder */}
-              <div className="w-20 h-20 bg-red-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-2xl text-red-600 font-bold">
-                  {member.name.split(' ').map(n => n[0]).join('')}
-                </span>
+      <div className="flex justify-center">
+        <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
+          {members.map((member, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden aspect-[3/4] w-64 mx-auto"
+            >
+              {/* Image Container */}
+              <div className="relative w-full h-full">
+                {member.image ? (
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-red-100 flex items-center justify-center">
+                    <span className="text-4xl text-red-600 font-bold">
+                      {member.name.split(' ').map((n: string) => n[0]).join('')}
+                    </span>
+                  </div>
+                )}
+                
+                {/* Overlay */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-red-600 to-transparent p-4">
+                  <div className="text-center">
+                    <h4 className="text-white text-lg font-semibold mb-1">
+                      {member.name}
+                    </h4>
+                    <p className="text-red-100 text-sm font-medium">
+                      {member.position}
+                    </p>
+                  </div>
+                </div>
               </div>
-              
-              <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                {member.name}
-              </h4>
-              
-              <p className="text-red-600 font-medium text-sm">
-                {member.position}
-              </p>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
 
   return (
-    <section id="team" className="py-20 bg-white">
+    <section id="team" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            DPH
+            Team KSR UNPAS
           </h2>
           <h3 className="text-xl md:text-2xl font-semibold text-red-600 mb-6">
-            Dewan Pengurus Harian KSR UNPAS 2024/2025
+            Team KSR UNPAS 2025/2026
           </h3>
           <div className="w-24 h-1 bg-red-600 mx-auto"></div>
         </div>
 
-        {/* Leadership Team */}
-        {renderTeamGroup("Kepemimpinan", leadership, "red-600")}
+        {/* Dewan Pembina */}
+        {renderTeamGroup("DEWAN PEMBINA", dewanPembinaMembers, "red-600")}
         
-        {/* Coordinators */}
-        {renderTeamGroup("Koordinator Unit", coordinators, "red-600")}
+        {/* DPH (DPH + HUMAS) */}
+        {renderTeamGroup(
+          "DPH (Dewan Pengurus Harian)",
+          [...dphMembers, ...humasMembers],
+          "red-600"
+        )}
         
-        {/* Support Team */}
-        {renderTeamGroup("Tim Pendukung", support, "red-600")}
+        {/* DPO Heading */}
+        <div className="mb-6">
+          <h3 className="text-2xl font-bold text-red-600 mb-2 text-center">DPO (Dewan Pengurus Operasional)</h3>
+          <div className="w-24 h-1 bg-red-600 mx-auto"></div>
+        </div>
+        
+        {/* Bidang DIKLAT */}
+        {renderTeamGroup("BIDANG DIKLAT", diklatMembers, "red-600")}
+        
+        {/* Bidang LITBANG */}
+        {renderTeamGroup("BIDANG LITBANG", litbangMembers, "red-600")}
+        
+        {/* Bidang PPM */}
+        {renderTeamGroup("BIDANG PPM", ppmMembers, "red-600")}
+        
+        {/* Bidang SAPRAS */}
+        {renderTeamGroup("BIDANG SAPRAS", saprasMembers, "red-600")}
+        
+        {/* Bidang P4GN */}
+        {renderTeamGroup("BIDANG P4GN", p4gnMembers, "red-600")}
 
         {/* Join the Team CTA */}
         <div className="text-center mt-16">

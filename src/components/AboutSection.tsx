@@ -40,7 +40,7 @@ export default function AboutSection() {
 
           {/* Visual Element */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-red-100 to-red-200 rounded-2xl p-8 shadow-xl">
+            <div className="bg-gradient-to-br from-red-100 to-red-200 rounded-2xl p-15 shadow-xl">
               <div className="text-center">
                 <div className="text-6xl mb-4">🏥</div>
                 <h4 className="text-xl font-semibold text-gray-800 mb-2">Palang Merah Indonesia</h4>
@@ -61,21 +61,7 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {aboutSection.stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="bg-red-50 rounded-lg p-6 hover:bg-red-100 transition-colors duration-200">
-                <div className="text-3xl md:text-4xl font-bold text-red-600 mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-sm md:text-base text-gray-600 font-medium">
-                  {stat.label}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+      
       </div>
     </section>
   );

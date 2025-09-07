@@ -15,7 +15,7 @@ export default function Home() {
       <Header />
       <HeroSection />
       <AboutSection />
-      <UnitSection />
+      {/* <UnitSection /> */}
       <TeamSection />
       <RegistrationSection />
       <FAQSection />

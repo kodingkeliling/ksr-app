@@ -8,8 +8,12 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
-              <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mr-4">
-                <span className="text-white text-xl font-bold">KSR</span>
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mr-4 overflow-hidden">
+                <img 
+                  src="/img/logoksr.png" 
+                  alt="KSR UNPAS Logo" 
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div>
                 <h3 className="text-xl font-bold">{siteConfig.name}</h3>
@@ -52,26 +56,36 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-6">Akses Cepat</h4>
             <ul className="space-y-3">
               <li>
                 <a href="#home" className="text-gray-300 hover:text-white transition-colors duration-200">
-                  Home
+                  Beranda
                 </a>
               </li>
               <li>
                 <a href="#about" className="text-gray-300 hover:text-white transition-colors duration-200">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#unit" className="text-gray-300 hover:text-white transition-colors duration-200">
-                  Unit
+                  Tentang Kami
                 </a>
               </li>
               <li>
                 <a href="#team" className="text-gray-300 hover:text-white transition-colors duration-200">
-                  Team
+                  Tim Kami
+                </a>
+              </li>
+              <li>
+                <a href="#faq" className="text-gray-300 hover:text-white transition-colors duration-200">
+                  FAQ
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="text-gray-300 hover:text-white transition-colors duration-200">
+                  Kontak Kami
+                </a>
+              </li>
+              <li>
+                <a href="#youtube" className="text-gray-300 hover:text-white transition-colors duration-200">
+                  YouTube
                 </a>
               </li>
               <li>
@@ -109,7 +123,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Newsletter */}
+        {/* Newsletter
         <div className="mt-16 pt-8 border-t border-gray-800">
           <div className="text-center">
             <h4 className="text-lg font-semibold mb-4">Our Newsletter</h4>
@@ -128,12 +142,12 @@ export default function Footer() {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-gray-800 text-center">
           <p className="text-gray-400 text-sm">
-            © Copyright <strong>KSR UNPAS</strong>. Powered by <strong>Koding Keliling</strong>
+            © Copyright <strong>KSR UNPAS</strong>. Powered by <strong> <a href="https://www.kodingkeliling.com/" target="_blank" rel="noopener noreferrer">Koding Keliling</a></strong>
           </p>
         </div>
       </div>

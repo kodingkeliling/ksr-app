@@ -7,11 +7,11 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
-    { name: 'Home', href: '#home' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Unit', href: '#unit' },
-    { name: 'Team', href: '#team' },
-    { name: 'Contact Us', href: '#contact' },
+    { name: 'Beranda', href: '#home' },
+    { name: 'Tentang Kami', href: '#about' },
+    { name: 'Tim Kami', href: '#team' },
+    { name: 'FAQ', href: '#faq' },
+    { name: 'Kontak Kami', href: '#contact' },
     { name: 'YouTube', href: '#youtube' },
   ];
 

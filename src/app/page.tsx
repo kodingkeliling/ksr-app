@@ -1,7 +1,6 @@
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
-import UnitSection from '@/components/UnitSection';
 import TeamSection from '@/components/TeamSection';
 import RegistrationSection from '@/components/RegistrationSection';
 import FAQSection from '@/components/FAQSection';

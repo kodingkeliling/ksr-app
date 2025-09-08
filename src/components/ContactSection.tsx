@@ -6,7 +6,7 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Contact Us
+            Kontak Kami
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Hubungi kami untuk informasi lebih lanjut tentang KSR UNPAS
@@ -64,13 +64,29 @@ export default function ContactSection() {
               <div className="mt-8 pt-6 border-t border-red-200">
                 <h4 className="font-semibold text-gray-900 mb-4">Media Sosial</h4>
                 <div className="flex space-x-4">
-                  <a href="#" className="text-red-600 hover:text-red-700">
+                  {/* Instagram */}
+                  <a href="https://www.instagram.com/ksrunpas/" target="_blank" rel="noopener noreferrer"  className="text-red-600 hover:text-red-700">
                     <span className="sr-only">Instagram</span>
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4z"/>
                     </svg>
                   </a>
-                  <a href="#" className="text-red-600 hover:text-red-700">
+                  {/* TikTok */}
+                  <a href="https://www.tiktok.com/@ksrunpas" target="_blank" rel="noopener noreferrer"  className="text-red-600 hover:text-red-700">
+                    <span className="sr-only">TikTok</span>
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12.025 2c1.295 0 2.532.402 3.545 1.16 1.082.81 1.79 2.006 1.91 3.336.016.18.024.362.024.544v.423c.643.403 1.34.72 2.073.933a6.69 6.69 0 0 0 1.423.25v3.416a9.91 9.91 0 0 1-3.256-.62 10.3 10.3 0 0 1-1.264-.616v5.748c0 3.1-2.514 5.614-5.614 5.614s-5.614-2.514-5.614-5.614 2.514-5.614 5.614-5.614c.225 0 .447.014.664.043v3.505a2.174 2.174 0 0 0-.664-.106 2.117 2.117 0 1 0 2.117 2.117V2h-.258z"/>
+                    </svg>
+                  </a>
+                  {/* Facebook */}
+                  <a href="https://www.facebook.com/korpssukarela.unpas.7" target="_blank" rel="noopener noreferrer"  className="text-red-600 hover:text-red-700">
+                    <span className="sr-only">Facebook</span>
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.333v21.333C0 23.403.597 24 1.325 24h11.495v-9.294H9.691v-3.622h3.129V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.505 0-1.797.715-1.797 1.764v2.314h3.587l-.467 3.622h-3.12V24h6.116C23.403 24 24 23.403 24 22.667V1.333C24 .597 23.403 0 22.675 0z"/>
+                    </svg>
+                  </a>
+                  {/* YouTube */}
+                  <a href="https://www.youtube.com/@ksrunpas8325/" target="_blank" rel="noopener noreferrer"  className="text-red-600 hover:text-red-700">
                     <span className="sr-only">YouTube</span>
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>

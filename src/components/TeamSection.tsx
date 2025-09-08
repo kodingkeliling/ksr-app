@@ -6,11 +6,12 @@ import {
   ppmMembers, 
   saprasMembers, 
   p4gnMembers, 
-  dewanPembinaMembers 
+  dewanPembinaMembers,
+  type TeamMember
 } from '@/data/mockData';
 
 export default function TeamSection() {
-  const renderTeamGroup = (title: string, members: any[], color: string) => (
+  const renderTeamGroup = (title: string, members: TeamMember[], color: string) => (
     <div className="mb-12">
       <h3 className={`text-2xl font-bold text-${color} mb-6 text-center`}>
         {title}

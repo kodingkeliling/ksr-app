@@ -238,17 +238,17 @@ export const registrationSteps = [
   {
     step: 1,
     title: "Pendaftaran Online dan Offline",
-    description: "Siapkan KTM, foto 3x4, dan surat rekomendasi dari fakultas"
+    description: "Melakukan pendaftaran secara langsung di tempat (Sabuga ITB & Markas KSR UNPAS) dan melakukan pendaftaran melalui link yang tersedia"
   },
   {
     step: 2,
     title: "Seleksi, Wawancara, dan Tes Fisik",
-    description: "Isi formulir pendaftaran melalui link yang tersedia"
+    description: "Mengikuti tahap seleksi yang tersedia"
   },
   {
     step: 3,
     title: "Pendidikan Dasar",
-    description: "Ikuti tahap seleksi dan wawancara yang diadakan"
+    description: "Mengikuti pendidikan dasar untuk menjadi anggota KSR UNPAS Bandung"
   },
 ];
 

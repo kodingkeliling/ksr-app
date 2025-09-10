@@ -11,8 +11,8 @@ export default function Header() {
     { name: 'Tentang Kami', href: '#about' },
     { name: 'Tim Kami', href: '#team' },
     { name: 'FAQ', href: '#faq' },
-    { name: 'Kontak Kami', href: '#contact' },
-    { name: 'YouTube', href: '#youtube' },
+    // { name: 'Kontak Kami', href: '#contact' },
+    // { name: 'YouTube', href: '#youtube' },
   ];
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -52,7 +52,7 @@ export default function Header() {
 
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-8 items-center">
             {navigation.map((item) => (
               <a
                 key={item.name}
@@ -63,8 +63,6 @@ export default function Header() {
                 {item.name}
               </a>
             ))}
-          </nav>
-
           {/* CTA Button */}
           <div className="hidden md:block">
             <a
@@ -75,6 +73,8 @@ export default function Header() {
               Daftar!
             </a>
           </div>
+          </nav>
+
 
           {/* Mobile menu button */}
           <div className="md:hidden">

@@ -18,8 +18,8 @@ export default function Home() {
       <TeamSection />
       <RegistrationSection />
       <FAQSection />
-      <ContactSection />
-      <YouTubeSection />
+      {/* <ContactSection /> */}
+      {/* <YouTubeSection /> */}
       <Footer />
     </main>
   );

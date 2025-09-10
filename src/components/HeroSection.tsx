@@ -1,6 +1,18 @@
+'use client';
+
 import { heroSection } from '@/data/mockData';
+import Image from 'next/image';
 
 export default function HeroSection() {
+  const smoothScrollTo = (elementId: string) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
   return (
     <section id="home" className="relative bg-gradient-to-br from-red-50 to-white min-h-screen flex items-center pt-12 sm:pt-20 lg:pt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -10,10 +22,13 @@ export default function HeroSection() {
           <div className="relative order-1 lg:order-2 mb-4 sm:mb-6 lg:mb-0">
             <div className="relative z-10">
               <div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-80 lg:h-80 mx-auto">
-                <img
+                <Image
                   src="/img/logoksr.png"
                   alt="KSR UNPAS Logo"
+                  width={320}
+                  height={320}
                   className="w-full h-full object-contain"
+                  priority
                 />
               </div>
 
@@ -40,18 +55,18 @@ export default function HeroSection() {
               {heroSection.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center lg:justify-start">
-              <a
-                href={heroSection.ctaLink}
+              <button
+                onClick={() => smoothScrollTo('daftar')}
                 className="bg-red-600 text-white px-5 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 rounded-lg text-sm sm:text-base lg:text-lg font-semibold hover:bg-red-700 transition-all duration-200 transform hover:scale-105 shadow-lg"
               >
                 {heroSection.ctaText}
-              </a>
-              <a
-                href="#about"
+              </button>
+              <button
+                onClick={() => smoothScrollTo('about')}
                 className="border-2 border-red-600 text-red-600 px-5 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 rounded-lg text-sm sm:text-base lg:text-lg font-semibold hover:bg-red-600 hover:text-white transition-all duration-200 transform hover:scale-105"
               >
                 Pelajari Lebih Lanjut
-              </a>
+              </button>
             </div>
           </div>
         </div>

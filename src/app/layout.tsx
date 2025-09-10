@@ -20,10 +20,14 @@ export const metadata: Metadata = {
   creator: "KSR UNPAS",
   publisher: "KSR UNPAS",
   icons: {
-    icon: '/img/logoksr.png',
-    shortcut: '/img/logoksr.png',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/img/logoksr.png', type: 'image/png' }
+    ],
+    shortcut: '/favicon.ico',
     apple: '/img/logoksr.png',
   },
+  manifest: '/manifest.json',
   formatDetection: {
     email: false,
     address: false,
@@ -72,6 +76,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id">
+      <head>
+        <script async src="https://tally.so/widgets/embed.js"></script>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

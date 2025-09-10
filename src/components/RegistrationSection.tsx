@@ -1,6 +1,40 @@
+'use client';
 import { registrationSection, registrationSteps } from '@/data/mockData';
+import Image from 'next/image';
+import { useEffect } from 'react';
+
+// Declare Tally type for TypeScript
+declare global {
+  interface Window {
+    Tally?: {
+      loadEmbeds: () => void;
+    };
+  }
+}
 
 export default function RegistrationSection() {
+  useEffect(() => {
+    // Initialize Tally embeds when component mounts
+    const initializeTally = () => {
+      if (typeof window !== 'undefined' && window.Tally) {
+        window.Tally.loadEmbeds();
+      } else {
+        // If Tally is not loaded yet, wait for it
+        const checkTally = setInterval(() => {
+          if (typeof window !== 'undefined' && window.Tally) {
+            window.Tally.loadEmbeds();
+            clearInterval(checkTally);
+          }
+        }, 100);
+        
+        // Clear interval after 5 seconds to avoid infinite checking
+        setTimeout(() => clearInterval(checkTally), 5000);
+      }
+    };
+
+    initializeTally();
+  }, []);
+
   return (
     <section id="daftar" className="py-20 bg-gradient-to-br from-red-600 to-red-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,7 +50,7 @@ export default function RegistrationSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
-          <div className="text-white">
+          <div className="text-white flex flex-col gap-8">
             <p className="text-lg md:text-xl text-red-100 mb-8 leading-relaxed">
               {registrationSection.description}
             </p>
@@ -42,93 +76,17 @@ export default function RegistrationSection() {
               Formulir Pendaftaran
             </h3>
             
-            <form className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                  Nama Lengkap
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-colors duration-200"
-                  placeholder="Masukkan nama lengkap"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="nim" className="block text-sm font-medium text-gray-700 mb-2">
-                  NIM
-                </label>
-                <input
-                  type="text"
-                  id="nim"
-                  name="nim"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-colors duration-200"
-                  placeholder="Masukkan NIM"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="faculty" className="block text-sm font-medium text-gray-700 mb-2">
-                  Fakultas
-                </label>
-                <select
-                  id="faculty"
-                  name="faculty"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-colors duration-200"
-                >
-                  <option value="">Pilih Fakultas</option>
-                  <option value="feb">Fakultas Ekonomi dan Bisnis</option>
-                  <option value="fh">Fakultas Hukum</option>
-                  <option value="fisip">Fakultas Ilmu Sosial dan Ilmu Politik</option>
-                  <option value="ft">Fakultas Teknik</option>
-                  <option value="fk">Fakultas Kedokteran</option>
-                  <option value="fkg">Fakultas Kedokteran Gigi</option>
-                  <option value="fmipa">Fakultas Matematika dan Ilmu Pengetahuan Alam</option>
-                  <option value="fapet">Fakultas Peternakan</option>
-                  <option value="fp">Fakultas Pertanian</option>
-                  <option value="fpsikologi">Fakultas Psikologi</option>
-                </select>
-              </div>
-              
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                  Nomor Telepon
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-colors duration-200"
-                  placeholder="Masukkan nomor telepon"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-colors duration-200"
-                  placeholder="Masukkan email"
-                />
-              </div>
-              
-              <button
-                type="submit"
-                className="w-full bg-red-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-200 transform hover:scale-105"
-              >
-                Kirim Pendaftaran
-              </button>
-            </form>
-            
-            <p className="text-xs text-gray-500 text-center mt-4">
-              *Data yang Anda berikan akan dijaga kerahasiaannya
-            </p>
+            <iframe 
+              data-tally-src="https://tally.so/embed/mZxJpv?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+              loading="lazy" 
+              width="100%" 
+              height="887" 
+              frameBorder="0" 
+              marginHeight={0} 
+              marginWidth={0} 
+              title="PENDAFTARAN ANGGOTA KSR UNPAS"
+              className="rounded-lg"
+            />
           </div>
         </div>
       </div>

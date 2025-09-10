@@ -1,3 +1,5 @@
+'use client';
+
 import { 
   dphMembers, 
   humasMembers, 
@@ -11,6 +13,15 @@ import {
 } from '@/data/mockData';
 
 export default function TeamSection() {
+  const smoothScrollTo = (elementId: string) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
   const renderTeamGroup = (title: string, members: TeamMember[], color: string) => (
     <div className="mb-12">
       <h3 className={`text-2xl font-bold text-${color} mb-6 text-center`}>
@@ -112,15 +123,15 @@ export default function TeamSection() {
               Jadilah bagian dari tim yang melayani dengan hati dan mengabdi untuk masyarakat. 
               Bergabunglah dengan KSR UNPAS dan kembangkan potensi kepemimpinan Anda.
             </p>
-            <a
-              href="#daftar"
+            <button
+              onClick={() => smoothScrollTo('daftar')}
               className="inline-flex items-center px-8 py-4 bg-white text-red-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200 shadow-lg"
             >
               Daftar Sekarang
               <svg className="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
-            </a>
+            </button>
           </div>
         </div>
       </div>

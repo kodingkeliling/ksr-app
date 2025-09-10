@@ -10,6 +10,16 @@ export default function FAQSection() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const smoothScrollTo = (elementId: string) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
   return (
     <section id="faq" className="py-20 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -75,17 +85,19 @@ export default function FAQSection() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="#contact"
+                href="https://wa.me/6285624956109"
                 className="inline-flex items-center px-6 py-3 bg-white text-red-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Hubungi Kami
               </a>
-              <a
-                href="#daftar"
+              <button
+                onClick={() => smoothScrollTo('daftar')}
                 className="inline-flex items-center px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-red-600 transition-colors duration-200"
               >
                 Daftar Sekarang
-              </a>
+              </button>
             </div>
           </div>
         </div>

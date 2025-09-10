@@ -1,6 +1,18 @@
+'use client';
+
 import { siteConfig, contactInfo } from '@/data/mockData';
+import Image from 'next/image';
 
 export default function Footer() {
+  const smoothScrollTo = (elementId: string) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -9,9 +21,11 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 rounded-full flex items-center justify-center mr-4 overflow-hidden">
-                <img 
+                <Image 
                   src="/img/logoksr.png" 
                   alt="KSR UNPAS Logo" 
+                  width={48}
+                  height={48}
                   className="w-full h-full object-contain"
                 />
               </div>
@@ -76,39 +90,39 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-6">Akses Cepat</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#home" className="text-gray-300 hover:text-white transition-colors duration-200">
+                <button onClick={() => smoothScrollTo('home')} className="text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer">
                   Beranda
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#about" className="text-gray-300 hover:text-white transition-colors duration-200">
+                <button onClick={() => smoothScrollTo('about')} className="text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer">
                   Tentang Kami
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#team" className="text-gray-300 hover:text-white transition-colors duration-200">
+                <button onClick={() => smoothScrollTo('team')} className="text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer">
                   Tim Kami
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#faq" className="text-gray-300 hover:text-white transition-colors duration-200">
+                <button onClick={() => smoothScrollTo('faq')} className="text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer">
                   FAQ
-                </a>
+                </button>
               </li>
-              <li>
-                <a href="#contact" className="text-gray-300 hover:text-white transition-colors duration-200">
+              {/* <li>
+                <button onClick={() => smoothScrollTo('contact')} className="text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer">
                   Kontak Kami
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#youtube" className="text-gray-300 hover:text-white transition-colors duration-200">
+                <button onClick={() => smoothScrollTo('youtube')} className="text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer">
                   YouTube
-                </a>
-              </li>
+                </button>
+              </li> */}
               <li>
-                <a href="#daftar" className="text-gray-300 hover:text-white transition-colors duration-200">
+                <button onClick={() => smoothScrollTo('daftar')} className="text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer">
                   Daftar
-                </a>
+                </button>
               </li>
             </ul>
           </div>

@@ -9,7 +9,7 @@ export default function Header() {
   const navigation = [
     { name: 'Beranda', href: '#home' },
     { name: 'Tentang Kami', href: '#about' },
-    { name: 'Tim Kami', href: '#team' },
+    { name: 'Kepengurusan Kami', href: '#team' },
     { name: 'FAQ', href: '#faq' },
     // { name: 'Kontak Kami', href: '#contact' },
     // { name: 'YouTube', href: '#youtube' },

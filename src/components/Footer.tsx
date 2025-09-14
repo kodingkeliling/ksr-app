@@ -101,7 +101,7 @@ export default function Footer() {
               </li>
               <li>
                 <button onClick={() => smoothScrollTo('team')} className="text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer">
-                  Tim Kami
+                  Kepengurusan Kami
                 </button>
               </li>
               <li>

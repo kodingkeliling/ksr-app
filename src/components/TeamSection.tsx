@@ -117,7 +117,7 @@ export default function TeamSection() {
         <div className="text-center mt-16">
           <div className="bg-gradient-to-r from-red-600 to-red-700 text-white rounded-2xl p-8 shadow-xl">
             <h3 className="text-2xl font-bold mb-4">
-              Bergabung dengan Tim Kami
+              Bergabung dengan Kepengurusan Kami
             </h3>
             <p className="text-red-100 mb-6 max-w-2xl mx-auto">
               Jadilah bagian dari tim yang melayani dengan hati dan mengabdi untuk masyarakat. 

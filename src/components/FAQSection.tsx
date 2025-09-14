@@ -81,7 +81,7 @@ export default function FAQSection() {
             </h3>
             <p className="text-red-100 mb-6 max-w-2xl mx-auto">
               Jika Anda masih memiliki pertanyaan yang belum terjawab, 
-              jangan ragu untuk menghubungi tim kami melalui media sosial atau email.
+              jangan ragu untuk menghubungi kepengurusan kami melalui media sosial atau email.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

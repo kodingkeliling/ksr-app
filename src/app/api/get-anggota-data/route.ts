@@ -51,7 +51,8 @@ export async function POST(request: NextRequest) {
         nama_lengkap: memberData['Nama Lengkap'] || memberData.nama_lengkap || memberData.nama || 'N/A',
         npm: memberData.NPM || memberData.npm || 'N/A',
         fakultas: memberData.Fakultas || memberData.fakultas || 'N/A',
-        jurusan: memberData.Jurusan || memberData.jurusan || 'N/A'
+        jurusan: memberData.Jurusan || memberData.jurusan || 'N/A',
+        tanggal_daftar: memberData['Submitted at'] || memberData.submitted_at || memberData.tanggal_daftar || 'N/A'
       }
     });
 

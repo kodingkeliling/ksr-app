@@ -9,6 +9,7 @@ interface AnggotaData {
   npm: string;
   fakultas: string;
   jurusan: string;
+  tanggal_daftar: string;
 }
 
 export default function PaymentResultPage() {
@@ -17,6 +18,24 @@ export default function PaymentResultPage() {
   const [loading, setLoading] = useState(true);
   const [anggotaData, setAnggotaData] = useState<AnggotaData | null>(null);
   const [error, setError] = useState<string | null>(null);
+
+  // Function to format date
+  const formatDate = (dateString: string) => {
+    if (dateString === 'N/A') return 'N/A';
+    
+    try {
+      const date = new Date(dateString);
+      return date.toLocaleDateString('id-ID', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+    } catch {
+      return dateString; // Return original string if parsing fails
+    }
+  };
 
   useEffect(() => {
     const fetchAnggotaData = async () => {
@@ -148,6 +167,10 @@ export default function PaymentResultPage() {
               <div className="flex justify-between items-center py-2 border-b border-gray-200">
                 <span className="text-gray-600 font-medium">Jurusan:</span>
                 <span className="font-semibold text-gray-900">{anggotaData.jurusan}</span>
+              </div>
+              <div className="flex justify-between items-center py-2 border-b border-gray-200">
+                <span className="text-gray-600 font-medium">Tanggal Daftar:</span>
+                <span className="font-semibold text-gray-900">{formatDate(anggotaData.tanggal_daftar)}</span>
               </div>
               <div className="flex justify-between items-center py-2">
                 <span className="text-gray-600 font-medium">Status:</span>

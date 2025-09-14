@@ -1,39 +1,28 @@
 'use client';
 import { registrationSection, registrationSteps } from '@/data/mockData';
-import Image from 'next/image';
-import { useEffect } from 'react';
-
-// Declare Tally type for TypeScript
-declare global {
-  interface Window {
-    Tally?: {
-      loadEmbeds: () => void;
-    };
-  }
-}
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import AccessCodeForm from './AccessCodeForm';
+import TallyForm from './TallyForm';
 
 export default function RegistrationSection() {
-  useEffect(() => {
-    // Initialize Tally embeds when component mounts
-    const initializeTally = () => {
-      if (typeof window !== 'undefined' && window.Tally) {
-        window.Tally.loadEmbeds();
-      } else {
-        // If Tally is not loaded yet, wait for it
-        const checkTally = setInterval(() => {
-          if (typeof window !== 'undefined' && window.Tally) {
-            window.Tally.loadEmbeds();
-            clearInterval(checkTally);
-          }
-        }, 100);
-        
-        // Clear interval after 5 seconds to avoid infinite checking
-        setTimeout(() => clearInterval(checkTally), 5000);
-      }
-    };
+  const [currentStep, setCurrentStep] = useState<'code' | 'form'>('code');
+  const [validatedCode, setValidatedCode] = useState('');
+  const router = useRouter();
 
-    initializeTally();
-  }, []);
+  const handleCodeValid = (code: string) => {
+    setValidatedCode(code);
+    setCurrentStep('form');
+  };
+
+  const handleCodeAlreadyUsed = (redirectUrl: string) => {
+    router.push(redirectUrl);
+  };
+
+  const handleBackToCode = () => {
+    setCurrentStep('code');
+    setValidatedCode('');
+  };
 
   return (
     <section id="daftar" className="py-20 bg-gradient-to-br from-red-600 to-red-800">
@@ -71,23 +60,17 @@ export default function RegistrationSection() {
           </div>
 
           {/* Registration Form */}
-          <div className="bg-white rounded-2xl p-8 shadow-2xl">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-              Formulir Pendaftaran
-            </h3>
-            
-            <iframe 
-              data-tally-src="https://tally.so/embed/mZxJpv?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
-              loading="lazy" 
-              width="100%" 
-              height="887" 
-              frameBorder="0" 
-              marginHeight={0} 
-              marginWidth={0} 
-              title="PENDAFTARAN ANGGOTA KSR UNPAS"
-              className="rounded-lg"
+          {currentStep === 'code' ? (
+            <AccessCodeForm 
+              onCodeValid={handleCodeValid}
+              onCodeAlreadyUsed={handleCodeAlreadyUsed}
             />
-          </div>
+          ) : (
+            <TallyForm 
+              code={validatedCode}
+              onBack={handleBackToCode}
+            />
+          )}
         </div>
       </div>
     </section>

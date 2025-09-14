@@ -21,7 +21,7 @@ export const siteConfig = {
   tagline: "Melayani dengan Hati, Mengabdi untuk Masyarakat",
   description: "KSR UNPAS adalah unit kegiatan mahasiswa Universitas Pasundan yang bergerak di bidang kemanusiaan dan kepalangmerahan.",
   address: "Jl. Tamansari No. 6-8, Kota Bandung, Jawa Barat, Indonesia",
-  phone: "085624956109",
+  phone: "+62 856-2495-6109",
   email: "ksrunpas88@gmail.com",
   instagram: "@ksrunpas",
   youtube: "KSR UNPAS"
@@ -254,7 +254,7 @@ export const registrationSteps = [
 
 export const contactInfo = {
   address: "Jl. Tamansari No. 6-8, Kota Bandung, Jawa Barat, Indonesia",
-  phone: "085624956109",
+  phone: "+62 856-2495-6109",
   email: "ksrunpas88@gmail.com",
   instagram: "@ksrunpas",
   youtube: "KSR UNPAS"

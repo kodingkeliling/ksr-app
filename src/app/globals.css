@@ -62,10 +62,39 @@ html {
   transition-duration: 150ms;
 }
 
-/* Focus styles */
+/* Focus styles - removed default outline */
 *:focus {
-  outline: 2px solid #dc2626;
-  outline-offset: 2px;
+  outline: none !important;
+}
+
+/* Remove all outlines, borders, and shadows on focus/active for all interactive elements */
+button:focus,
+button:active,
+button:focus-visible,
+a:focus,
+a:active,
+a:focus-visible,
+input:focus,
+input:active,
+input:focus-visible,
+textarea:focus,
+textarea:active,
+textarea:focus-visible,
+select:focus,
+select:active,
+select:focus-visible,
+[role="button"]:focus,
+[role="button"]:active,
+[role="button"]:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: inherit !important;
+}
+
+/* Ensure no focus ring appears anywhere */
+*:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 /* Selection styles */

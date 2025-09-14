@@ -4,8 +4,6 @@ import AboutSection from '@/components/AboutSection';
 import TeamSection from '@/components/TeamSection';
 import RegistrationSection from '@/components/RegistrationSection';
 import FAQSection from '@/components/FAQSection';
-import ContactSection from '@/components/ContactSection';
-import YouTubeSection from '@/components/YouTubeSection';
 import Footer from '@/components/Footer';
 
 export default function Home() {

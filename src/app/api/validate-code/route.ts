@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Find the code in the Kode sheet
-    const validCode = kodeData.data.find((row: any) => row.kode === code);
+    const validCode = kodeData.data.find((row: { kode: string }) => row.kode === code);
     
     if (!validCode) {
       return NextResponse.json(
@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
     const anggotaData = await anggotaResponse.json();
 
     if (anggotaData.data && anggotaData.data.length > 0) {
-      const usedCode = anggotaData.data.find((row: any) => row.kode === code);
+      const usedCode = anggotaData.data.find((row: { kode: string }) => row.kode === code);
       
       if (usedCode) {
         // Code is already used, redirect to payment result

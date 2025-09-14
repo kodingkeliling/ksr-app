@@ -1,6 +1,7 @@
 'use client';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 export default function PaymentResultPage() {
   const params = useParams();
@@ -68,19 +69,19 @@ export default function PaymentResultPage() {
               Jika Anda memiliki pertanyaan atau memerlukan bantuan, silakan hubungi tim admin KSR UNPAS.
             </p>
             <div className="space-y-3">
-              <a
+              <Link
                 href="/#daftar"
                 className="inline-block bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors"
               >
                 Kembali ke Halaman Pendaftaran
-              </a>
+              </Link>
               <br />
-              <a
+              <Link
                 href="/"
                 className="inline-block text-red-600 hover:text-red-700 font-medium"
               >
                 Kembali ke Beranda
-              </a>
+              </Link>
             </div>
           </div>
         </div>

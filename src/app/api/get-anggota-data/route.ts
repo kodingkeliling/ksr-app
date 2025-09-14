@@ -24,8 +24,17 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Find the member data by code
-    const memberData = anggotaData.data.find((row: { kode: string }) => row.kode === code);
+    // Debug logging
+    console.log('Anggota data structure:', JSON.stringify(anggotaData.data[0], null, 2));
+    console.log('Looking for code:', code);
+
+    // Find the member data by code - handle different field name formats
+    const memberData = anggotaData.data.find((row: Record<string, string>) => 
+      row.kode === code || 
+      row.Kode === code ||
+      row.kode?.toLowerCase() === code.toLowerCase() ||
+      row.Kode?.toLowerCase() === code.toLowerCase()
+    );
     
     if (!memberData) {
       return NextResponse.json(
@@ -34,15 +43,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Return the member data
+    // Return the member data - handle different field name formats
     return NextResponse.json({
       success: true,
       data: {
-        kode: memberData.kode,
-        nama_lengkap: memberData.nama_lengkap || memberData.nama || 'N/A',
-        npm: memberData.npm || 'N/A',
-        fakultas: memberData.fakultas || 'N/A',
-        jurusan: memberData.jurusan || 'N/A'
+        kode: memberData.kode || memberData.Kode || 'N/A',
+        nama_lengkap: memberData['Nama Lengkap'] || memberData.nama_lengkap || memberData.nama || 'N/A',
+        npm: memberData.NPM || memberData.npm || 'N/A',
+        fakultas: memberData.Fakultas || memberData.fakultas || 'N/A',
+        jurusan: memberData.Jurusan || memberData.jurusan || 'N/A'
       }
     });
 

@@ -51,7 +51,7 @@ export default function PaymentResultPage() {
       <div className="min-h-screen bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
-          <p className="text-white text-lg">Memuat informasi pembayaran...</p>
+          <p className="text-white text-lg">Mohon tunggu...</p>
         </div>
       </div>
     );
@@ -115,7 +115,7 @@ export default function PaymentResultPage() {
               </svg>
             </div>
             <h1 className="text-3xl font-bold text-gray-900 mb-2">
-              Data Pendaftaran Ditemukan
+             Pendaftaran Berhasil
             </h1>
             <p className="text-gray-600">
               Berikut adalah informasi pendaftaran Anda
